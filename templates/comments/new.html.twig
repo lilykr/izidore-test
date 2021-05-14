@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  New comment
+{% endblock %}
+
+{% block body %}
+  <h1 style="text-align: center; padding: 1rem;">
+    Laissez-nous un commentaire pour nous parler de votre expérience avec
+    Izidore ❤️
+  </h1>
+  {{ form_start(form) }}
+  {{ form_widget(form) }}
+  {{ form_end(form) }}
+{% endblock %}

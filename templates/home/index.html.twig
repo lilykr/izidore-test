@@ -1,11 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Clients comments
+  Izidore home
 {% endblock %}
 
 {% block body %}
-  <h1>
-    Bienvenue sur notre site de vente de meubles d'occasion
+  <h1 style="text-align: center; padding: 1rem;">
+    DES MEUBLES D'OCCASION DE GRANDES MARQUES 🤩
   </h1>
+  <button type="button"
+    class="btn btn-secondary btn-lg"
+    onClick="document.location.href='comment/new'"
+    style="text-align: center; margin: 2rem;">
+    Donner son avis
+  </button>
+  <button type="button"
+    class="btn btn-primary btn-lg"
+    onClick="document.location.href='comment/new'"
+    style="text-align: center; margin: 2rem;">
+    Acheter
+  </button>
+  <button type="button"
+    class="btn btn-warning btn-lg"
+    onClick="document.location.href='comment/new'"
+    style="text-align: center; margin: 2rem;">
+    Vendre
+  </button>
+  <button type="button"
+    class="btn btn-info btn-lg"
+    onClick="document.location.href='comment/new'"
+    style="text-align: center; margin: 2rem;">
+    Rechercher
+  </button>
+  <img src="https://images.unsplash.com/photo-1596900779744-2bdc4a90509a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"
+    alt="couch" />
 {% endblock %}

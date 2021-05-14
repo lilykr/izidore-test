@@ -5,8 +5,19 @@
 {% endblock %}
 
 {% block body %}
+  <div style="display: flex; justify-content: space-between;">
+    <h1 style="text-align: center; padding: 1rem;">
+      Tous les avis de nos clients
+    </h1>
+    <button type="button"
+      class="btn btn-secondary btn-lg"
+      onClick="document.location.href='comment/new'"
+      style="text-align: center; margin: 1rem;">
+      Donner son avis
+    </button>
+  </div>
   {% if comments %}
-    <div style="display: flex;">
+    <div style="display: flex; flex-wrap: wrap;">
       {% for comment in comments %}
         <div class="card border-secondary mb-3"
           style="max-width: 20rem; margin-top: 1.4rem; margin-right: 2rem;">
@@ -25,8 +36,8 @@
       {% endfor %}
     </div>
   {% else %}
-    <p>
+    <h2>
       Pas d'avis client pour le moment
-    </p>
+    </h2>
   {% endif %}
 {% endblock %}

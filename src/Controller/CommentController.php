@@ -5,14 +5,19 @@ namespace App\Controller;
 use App\Entity\Comment;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 class CommentController extends AbstractController
 {
     /**
-     *  @Route("/comments")
+     *  @Route("/comments", name="comments")
      */
     public function comments()
     {
@@ -33,25 +38,40 @@ class CommentController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
-    // /**
-    //  *  @Route("/comment/save")
-    //  */
-    // public function save()
-    // {
-    //     $entityManager = $this->getDoctrine()->getManager();
+    public function new(Request $request)
+    {
+        $comment = new Comment();
 
-    //     $comment = new Comment();
-    //     $comment->setName('Pierre');
-    //     $comment->setTitle('Efficace et élégant');
-    //     $comment->setContent(
-    //         "Superbe expérience avec Izidore, qui a meublé avec goût l'intégralité de mon appartement T3 ! Délais respectés, meubles assortis, modernes et en très bon état. Aucune mauvaise surprise, et Ilef est d'une grande gentillesse et réactivité sans faille. J'hésiterai pas une seconde à faire à nouveau appel à vous pour de futurs projets."
-    //     );
+        $form = $this->createFormBuilder($comment)
+            ->add('name', TextType::class, [
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('title', TextType::class, [
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('content', TextareaType::class, [
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('save', SubmitType::class, [
+                'label' => 'Create',
+                'attr' => ['class' => 'btn btn-primary mt-3'],
+            ])
+            ->getForm();
 
-    //     $entityManager->persist($comment);
-    //     $entityManager->flush();
+        $form->handleRequest($request);
 
-    //     return new Response(
-    //         'saves an article with the id of ' . $comment->getId()
-    //     );
-    // }
+        if ($form->isSubmitted() && $form->isValid()) {
+            $comment = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('comments');
+        }
+
+        return $this->render('comments/new.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }
