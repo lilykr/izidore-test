@@ -5,7 +5,58 @@
 {% endblock %}
 
 {% block body %}
-  <h1 style="text-align: center; padding: 1rem;">
-    Vendez vos meubles
+  <h1 style="text-align: center; padding: 2rem;">
+    Proposez vos meubles à la vente 💪
   </h1>
+
+  <form style="display: flex; justify-content: center">
+    <fieldset>
+      <div class="form-group row" style="width: 40rem;"></div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">
+          Adresse email
+        </label>
+        <input type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Votre email" />
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">
+          Choisissez le type de meuble
+        </label>
+        <select class="form-select" id="exampleSelect1">
+          <option>
+            Canapé
+          </option>
+          <option>
+            Lit
+          </option>
+          <option>
+            Table
+          </option>
+          <option>
+            Déco
+          </option>
+          <option>
+            Chaise
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleTextarea" class="form-label mt-4">
+          Décrivez votre meuble
+        </label>
+        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="formFile" class="form-label mt-4">
+          Télécharger une image
+        </label>
+        <input class="form-control" type="file" id="formFile" />
+      </div>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </fieldset>
+  </form>
 {% endblock %}

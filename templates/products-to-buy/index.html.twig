@@ -1,11 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Izidore home
+  Products to buy
 {% endblock %}
 
 {% block body %}
-  <h1 style="text-align: center; padding: 1rem;">
-    Nos produits à acheter
+  <h1 style="text-align: center; padding: 2rem;">
+    Tous nos meubles 🙌
   </h1>
+  <div style="text-align: center; padding: 1rem;">
+    <button class="btn btn-lg btn-secondary"
+      type="button"
+      onClick="document.location.href='sell-your-products'">
+      Je vends mon meuble
+    </button>
+  </div>
+  <div style="display: flex; flex-wrap: wrap;">
+    <img style="width:23rem; height: 23rem; padding: 1rem;"
+      src="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80"
+      alt="couch" />
+    <img style="width:23rem; height: 23rem; padding: 1rem;"
+      src="https://images.unsplash.com/photo-1594040226829-7f251ab46d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+      alt="rug" />
+    <img style="width:23rem; height: 23rem; padding: 1rem;"
+      src="https://images.unsplash.com/photo-1581428982868-e410dd047a90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+      alt="table" />
+    <img style="width:23rem; height: 23rem; padding: 1rem;"
+      src="https://images.unsplash.com/photo-1499933374294-4584851497cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+      alt="bedside table" />
+    <img style="width:23rem; height: 23rem; padding: 1rem;"
+      src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80"
+      alt="chair" />
+    <img style="width:23rem; height: 23rem; padding: 1rem;"
+      src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+      alt="bed" />
+  </div>
 {% endblock %}
