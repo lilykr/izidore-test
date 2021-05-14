@@ -48,16 +48,21 @@ class CommentController extends AbstractController
 
         $form = $this->createFormBuilder($comment)
             ->add('name', TextType::class, [
-                'attr' => ['class' => 'form-control'],
+                'label' => 'Nom',
+                'attr' => [
+                    'class' => 'form-control',
+                ],
             ])
             ->add('title', TextType::class, [
+                'label' => 'Titre',
                 'attr' => ['class' => 'form-control'],
             ])
             ->add('content', TextareaType::class, [
+                'label' => 'Avis',
                 'attr' => ['class' => 'form-control'],
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'Create',
+                'label' => 'Poster',
                 'attr' => ['class' => 'btn btn-primary mt-3'],
             ])
             ->getForm();

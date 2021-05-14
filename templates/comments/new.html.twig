@@ -9,7 +9,11 @@
     Laissez-nous un commentaire pour nous parler de votre expérience avec
     Izidore ❤️
   </h1>
-  {{ form_start(form) }}
-  {{ form_widget(form) }}
-  {{ form_end(form) }}
+  <div style="display: flex; justify-content: center">
+    <div style="width: 40rem;">
+      {{ form_start(form) }}
+      {{ form_widget(form) }}
+      {{ form_end(form) }}
+    </div>
+  </div>
 {% endblock %}
