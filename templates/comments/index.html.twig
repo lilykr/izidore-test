@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Clients comments
+{% endblock %}
+
+{% block body %}
+  {% if names %}
+    <div style="display: flex;">
+      {% for name in names %}
+        <div class="card border-secondary mb-3"
+          style="max-width: 20rem; margin-top: 1.4rem; margin-right: 2rem;">
+          <div class="card-header">
+            Avis de {{ name }}
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">
+              Titre de l'avis
+            </h4>
+            <p class="card-text">
+              Contenu de l'avis
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>
+      Pas d'avis client pour le moment
+    </p>
+  {% endif %}
+{% endblock %}
