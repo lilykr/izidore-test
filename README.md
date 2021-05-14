@@ -10,7 +10,7 @@ Clone the repository on your computer
 git clone git@github.com:lilykr/izidore-test.git
 ```
 
-## Developpement mode
+## Development mode
 
 In order to develop on your computer, in your .env change 
 
