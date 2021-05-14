@@ -36,4 +36,34 @@ class Comment
     {
         return $this->id;
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        return $this->name = $name;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        return $this->title = $title;
+    }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setContent($content)
+    {
+        return $this->content = $content;
+    }
 }
