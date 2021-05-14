@@ -38,6 +38,10 @@ class CommentController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
+    /**
+     * @Route("/comment/new", name="new_comment")
+     * Method({"GET", "POST"})
+     */
     public function new(Request $request)
     {
         $comment = new Comment();
